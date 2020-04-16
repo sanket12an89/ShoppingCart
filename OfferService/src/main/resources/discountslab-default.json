@@ -1,0 +1,49 @@
+[
+	{
+		"customerType": "Regular",
+		"amountRange": {
+			"NILL": {
+				"min": 0,
+				"max": 500,
+				"clause": "between"
+			},
+			"10%": {
+				"min": 10000,
+				"max": 5000,
+				"clause": "between"
+			},
+			"20%": {
+				"min": 10000,
+				"max": 10000,
+				"clause": "between"
+			}
+		},
+		"currency": "Doller"
+	},
+	{
+		"customerType": "Premium",
+		"amountRange": {
+			"10%": {
+				"min": 0,
+				"max": 4000,
+				"clause": "between"
+			},
+			"15%": {
+				"min": 8000,
+				"max": 4000,
+				"clause": "between"
+			},
+			"20%": {
+				"min": 12000,
+				"max": 8000,
+				"clause": "between"
+			},
+			"30%": {
+				"min": 12000,
+				"max": 12000,
+				"clause": "Above"
+			}
+		},
+		"currency": "Doller"
+	}
+]
