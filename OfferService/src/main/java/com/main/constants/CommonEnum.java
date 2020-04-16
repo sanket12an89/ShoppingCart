@@ -1,4 +1,9 @@
 package com.main.constants;
+/**
+ * Common ENUM
+ * @author snavale
+ *
+ */
 public class CommonEnum {
 
 	public enum Clause {

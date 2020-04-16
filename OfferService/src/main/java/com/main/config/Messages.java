@@ -8,11 +8,9 @@ import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.stereotype.Component;
 
 /**
- * Helper to simplify accessing i18n messages in code.
- *  * 
- * This example uses hard-coded English locale.
+ * Helper to simplify accessing  messages in code.
+ *  
  *
- * @since 2015-11-02
  */
 @Component
 public class Messages {

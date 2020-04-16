@@ -29,7 +29,7 @@ public class CartController {
 	ICartService cartServiceObj;
 
 	/**
-	 * Calculate cart details
+	 * Calculate cart details by Customer Type
 	 * 
 	 * @return
 	 */
@@ -44,7 +44,7 @@ public class CartController {
 	}
 
 	/**
-	 * Calculate cart details
+	 * Calculate cart details by QTY
 	 * 
 	 * @return
 	 */

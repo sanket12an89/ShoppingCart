@@ -13,6 +13,10 @@ public class WebController {
 	@Autowired
 	IOfferService offerServiceObj;
 
+	/**
+	 * Redirect cart jsp page
+	 * @return
+	 */
 	@GetMapping("/cart")
 	public ModelAndView tokenParametersWithModelAndView() {
 		ModelAndView modelAndView = new ModelAndView("cart");

@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Map;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.main.pojo.Range;
 import com.mongodb.lang.NonNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

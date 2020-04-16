@@ -8,8 +8,8 @@ import java.util.Map;
 import com.main.constants.CommonEnum.Clause;
 import com.main.constants.Constants;
 import com.main.entity.DiscountSlabs;
-import com.main.entity.Range;
 import com.main.pojo.ProductResponsePojo;
+import com.main.pojo.Range;
 
 public class CommonUtils {
 

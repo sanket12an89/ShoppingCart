@@ -1,4 +1,4 @@
-package com.main.entity;
+package com.main.pojo;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
