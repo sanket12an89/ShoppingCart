@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.main.config.Messages;
 import com.main.constants.HTTPConstants;
 import com.main.entity.DiscountSlabs;
 import com.main.exceptions.GlobalExceptionHandler;
@@ -26,6 +27,9 @@ public class OfferController {
 	@Autowired
 	IOfferService offerServiceObj;
 
+	@Autowired
+    Messages messages;
+	
 	/**
 	 * Get all discount slabs with details
 	 * 
@@ -66,7 +70,7 @@ public class OfferController {
 	public ResponseData<Object> addDiscountSlabs(@RequestBody DiscountSlabs discountRequestObj) {
 		ResponseData<Object> genericResponseObj = ResponseData.builder().build();
 		offerServiceObj.add(discountRequestObj);
-		genericResponseObj.setData("You have successfully created the discount slabs");
+		genericResponseObj.setData(messages.get("create.discount.msg"));
 		genericResponseObj.setStatus(HTTPConstants.MSG_SUUCESS);
 
 		LOGGER.info("Add discounts slabs {} "+genericResponseObj);
@@ -82,7 +86,7 @@ public class OfferController {
 	public ResponseData<Object> removeAllDiscountSlabs() {
 		ResponseData<Object> genericResponseObj = ResponseData.builder().build();
 		offerServiceObj.removeAll();
-		genericResponseObj.setData("You have successfully remove all the discount slabs");
+		genericResponseObj.setData(messages.get("removeall.discount.msg"));
 		genericResponseObj.setStatus(HTTPConstants.MSG_SUUCESS);
 
 		LOGGER.info("Remove All discounts slabs {} "+genericResponseObj);
@@ -99,7 +103,7 @@ public class OfferController {
 	public ResponseData<Object> removeDiscountSlabs(@PathVariable("customerType") String customerType) {
 		ResponseData<Object> genericResponseObj = ResponseData.builder().build();
 		offerServiceObj.remove(customerType);
-		genericResponseObj.setData("You have successfully remove the discount slabs");
+		genericResponseObj.setData(messages.get("remove.discount.msg"));
 		genericResponseObj.setStatus(HTTPConstants.MSG_SUUCESS);
 		
 		

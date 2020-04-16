@@ -14,6 +14,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.main.config.Messages;
 import com.main.constants.Constants;
 import com.main.entity.DiscountSlabs;
 import com.main.repository.IOfferRepsitory;
@@ -28,6 +29,10 @@ public class OfferServiceImpl implements IOfferService, InitializingBean {
 	@Autowired
 	IOfferRepsitory offerRepoObj;
 
+	@Autowired
+	Messages messages;
+	
+	
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		loadDefaultDiscountSlabs();
@@ -59,8 +64,7 @@ public class OfferServiceImpl implements IOfferService, InitializingBean {
 	public void remove(String customerType) {
 		DiscountSlabs discountSlabObj = offerRepoObj.findByCustomerType(customerType);
 		if (ObjectUtils.isEmpty(discountSlabObj)) {
-			throw new ValidationException("Customer Type is not found!");
-
+			throw new ValidationException((messages.get("customer.not.msg")));
 		}
 		offerRepoObj.delete(discountSlabObj);
 	}
@@ -75,7 +79,7 @@ public class OfferServiceImpl implements IOfferService, InitializingBean {
 
 		DiscountSlabs discountSlabExistObj = offerRepoObj.findByCustomerType(discountSlabsObj.getCustomerType());
 		if (!ObjectUtils.isEmpty(discountSlabExistObj)) {
-			throw new ValidationException("Customer Type is already exist!");
+			throw new ValidationException(messages.get("customer.exist.msg"));
 		}
 		discountSlabsObj.setId(UUID.randomUUID().toString());
 		offerRepoObj.save(discountSlabsObj);
