@@ -1,4 +1,4 @@
-## prerequisite
+## Prerequisite
 
 1. Java1.8
 2. Gradle
